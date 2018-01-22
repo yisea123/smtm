@@ -1,0 +1,122 @@
+===============================================================================
+2013/7/29
+扩展位置比较器使用说明
+
+PCI-9014扩展比较器提供了512点的位置比较功能，通过把参考点位置写入到PCI-9014
+的内部FIFO中，位置比较模块依次从FIFO中取出参考值进行比较。只有在比较条件满足
+时，才会从FIFO中取下一个参考值。如果当前比较条件没有满足，则不会取下一个参考值。
+因此如果控制轴运动方向为正向时，存入FIFO中的位置数据必须以增大的顺序存入；
+如果控制轴运动方向为负向时，存入FIFO中的位置数据必须以减小的顺序存入。
+
+位置比较器使用的位置计数器长度为28位，因此支持的参考位置范围为
+-134217728 ~134217727，因此用户向FIFO中写入的位置值不能超过这个范围。
+
+比较器条件满足时输出一个脉冲，该脉冲的电平可以使用p9014_comp_enable函数里面
+的level参数进行设置，脉冲的宽度为当前脉冲的周期。
+
+使能比较器的函数p9014_comp_enable会返回值，用户需要检查该返回值是否正常;如果
+没有检查该返回值，其它API函数有可能不能正常工作。
+
+只有X轴才有此比较器功能。
+
+只有硬件版本号（通过p9014_version_info可以查询到）为0x0113， revision为0x10或以上
+(通过p9014_get_revision函数查询)的PCI-9014才支持该扩展位置比较器功能。
+
+比较器输出从DO[4]输出(从0开始编号)；当比较器功能禁止时，用户可以正常使用DO[4]
+
+使用例子请参考 examples\VC++\PosComp目录。
+===============================================================================
+API函数列表：
+PCI9014_API I32  WINAPI p9014_comp_enable(I32 card_no, I32 enable, I32 active_level, I32 ref_source, I32 length);
+PCI9014_API I32  WINAPI p9014_comp_get_fifoStatus(I32 card_no, U32* stat);
+PCI9014_API I32  WINAPI p9014_comp_add_ref(I32 card_no, I32 PosRef);
+PCI9014_API I32  WINAPI p9014_comp_get_curRef(I32 card_no, I32 *PosRef);
+PCI9014_API I32  WINAPI p9014_comp_clr_fifo(I32 card_no);
+PCI9014_API I32  WINAPI p9014_comp_get_matchCount(I32 card_no, U32 * Count);
+PCI9014_API I32  WINAPI p9014_comp_clr_matchCount(I32 card_no);
+
+===============================================================================
+函数说明：
+PCI9014_API I32 WINAPI p9014_comp_enable(I32 card_no, I32 enable, I32 active_level, I32 ref_source, I32 length)
+功能：
+    使能比较器功能。
+参数：
+    card_no     卡号
+    enable      禁止/使能， 1 - 使能； 0 - 禁止
+    			当用户调用该函数使能位置比较功能时，API自动将硬件FIFO中内容清空。
+    level       位置比较器条件满足时的输出脉冲电平， 1 表示有效脉冲的电平为高
+                电平； 0 表示有效脉冲的电平有低电平。
+    ref_source  比较器参考位置，  0表示命令位置； 1表示编码器反馈位置
+    length      位置比较输出脉冲的持续时间，单位为ns 
+返回值：
+    0表示成功； 其它值表示发生错误。
+    注意：用户程序在使能比较器时需要检查该返回值，否则后面的操作会发生异常。
+
+
+PCI9014_API I32 WINAPI p9014_comp_get_fifoStatus(I32 card_no, U32* stat);
+功能：
+    查询FIFO状态
+    stat的位定义：
+    bit 0   -   empty, FIFO中的位置数据个数为0时为1，否则清零。
+    bit 1   -   almost empty， FIFO中的位置数据个数小于128时该bit置1，否则清零。
+    bit 2   -   almost full， FIFO中的位置数据大于896时该bit置1，否则清零。
+    bit 3   -   full，FIFO中的位置数据大于1024时该bit置1，否则清零。
+
+    bit[31:16]  FIFO中剩余数据个数
+	
+    用户在向FIFO中写入位置数据时，需要使用该函数判断FIFO是否有多余的空间。
+参数：
+    card_no     卡号
+    stat        指向返回参数的指针
+
+返回值：
+    0表示成功； 其它值表示发生错误。
+
+PCI9014_API I32 WINAPI p9014_comp_add_ref(I32 card_no, I32 PosRef);
+功能：
+    向位置比较器FIFO中添加一个参考位置
+    在想FIFO中添加数据时，最好使用p9014_comp_get_fifoStatus函数判断
+    FIFO的状态是否为full
+参数：
+    card_no     卡号
+    PosRef      向FIFO写入的参考位置，范围-67108864 ~67108863
+返回值：
+    0表示成功； 其它值表示发生错误。
+
+PCI9014_API I32 WINAPI p9014_comp_get_curRef(I32 card_no, I32 *PosRef);
+功能：
+    获取位置比较器当前使用的参考位置
+参数：
+    card_no     卡号
+返回值：
+    0表示成功； 其它值表示发生错误。
+
+PCI9014_API I32 WINAPI p9014_comp_clr_fifo(I32 card_no);
+功能：
+    清除保存参考位置数据的FIFO；
+    主要用于位置比较器的初始化时调用。
+参数：
+    card_no     卡号
+返回值：
+    0表示成功； 其它值表示发生错误。
+
+PCI9014_API I32 WINAPI p9014_comp_get_matchCount(I32 card_no, U32 * Count);
+功能：
+    获取成功比较次数
+    比较次数寄存器保存了成功比较次数，用来监视比较器工作状况；该寄存器为16bit，
+    所以支持的范围为0~65535。
+参数：
+    card_no     卡号
+
+返回值：
+    0表示成功； 其它值表示发生错误。
+
+PCI9014_API I32 WINAPI p9014_comp_clr_matchCount(I32 card_no);
+功能：
+    清除比较次数寄存器的值
+    比较次数寄存器保存了成功比较次数，用来监视比较器工作状况；该寄存器为16bit，
+    所以支持的范围为0~65535。
+参数：
+    card_no     卡号
+返回值：
+    0表示成功； 其它值表示发生错误。

@@ -1,0 +1,1 @@
+cl.exe PosCompDemo.cpp pos_latch.cpp /I ..\..\..\library /link ..\..\..\library\pci9014.lib

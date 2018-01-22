@@ -1,0 +1,411 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\MotionPanel64.rc2""  // 非 Microsoft Visual C++ 编辑的资源\r\n"
+    "#include ""l.CHS\\afxres.rc""      // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\MotionPanel64.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 MotionPanel64"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
+    LTEXT           "MotionPanel64，1.0 版",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2013",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "确定",IDOK,113,41,50,14,WS_GROUP
+END
+
+IDD_MOTIONPANEL64_DIALOG DIALOGEX 0, 0, 289, 198
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "升立德科技有限公司PCI9014--DEMOx64"
+FONT 14, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    LTEXT           "卡号",IDC_STATIC,4,3,15,8
+    COMBOBOX        IDC_CARD,24,1,48,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_TAB_MAIN,"SysTabControl32",0x0,0,14,289,184
+END
+
+IDD_AIXS DIALOGEX 0, 0, 292, 198
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+FONT 14, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    GROUPBOX        "当前状态",IDC_STATIC,7,0,217,86
+    CTEXT           "X",IDC_STATIC,11,21,8,12,SS_CENTERIMAGE
+    CTEXT           "Y",IDC_STATIC,11,36,8,12,SS_CENTERIMAGE
+    CTEXT           "Z",IDC_STATIC,11,51,8,12,SS_CENTERIMAGE
+    CTEXT           "U",IDC_STATIC,11,66,8,12,SS_CENTERIMAGE
+    CTEXT           "当前速度",IDC_STATIC,22,10,35,8,SS_CENTERIMAGE
+    CTEXT           "状态",IDC_STATIC,58,10,21,8,SS_CENTERIMAGE
+    CTEXT           "命令位置",IDC_STATIC,81,10,35,8,SS_CENTERIMAGE
+    CTEXT           "反馈位置",IDC_STATIC,118,10,35,8,SS_CENTERIMAGE
+    CTEXT           "正限位",IDC_STATIC,155,10,22,8,SS_CENTERIMAGE
+    CTEXT           "负限位",IDC_STATIC,179,10,22,8,SS_CENTERIMAGE
+    CTEXT           "原点",IDC_STATIC,203,10,17,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_SPEED_X,21,21,35,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_CMDPOS_X,81,21,35,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ENCPOS_X,118,21,35,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PEL_X,155,21,22,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MEL_X,179,21,22,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ORG_X,203,21,17,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_STATUS_X,58,21,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SPEED_Y,21,36,35,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_CMDPOS_Y,81,36,35,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ENCPOS_Y,118,36,35,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PEL_Y,155,36,22,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MEL_Y,179,36,22,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ORG_Y,203,36,17,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_STATUS_Y,58,36,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SPEED_Z,21,51,35,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_CMDPOS_Z,81,51,35,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ENCPOS_Z,118,51,35,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PEL_Z,155,51,22,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MEL_Z,179,51,22,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ORG_Z,203,51,17,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_STATUS_Z,58,51,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SPEED_U,21,66,35,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_CMDPOS_U,81,66,35,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ENCPOS_U,118,66,35,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PEL_U,155,66,22,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MEL_U,179,66,22,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ORG_U,203,66,17,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_STATUS_U,58,66,21,12,ES_AUTOHSCROLL
+    GROUPBOX        "驱动距离",IDC_STATIC,227,0,56,86
+    EDITTEXT        IDC_DEST_POS_X,230,21,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DEST_POS_Y,230,36,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DEST_POS_Z,230,51,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DEST_POS_U,230,66,24,12,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,7,84,215,84
+    GROUPBOX        "运行模式",IDC_STATIC,10,89,57,76
+    CONTROL         "绝对位置",IDC_P_RUN,"Button",BS_AUTORADIOBUTTON,18,98,39,10
+    CONTROL         "速度模式+",IDC_V_RUN_P,"Button",BS_AUTORADIOBUTTON,18,120,39,10
+    CONTROL         "速度模式-",IDC_V_RUN_N,"Button",BS_AUTORADIOBUTTON,18,131,39,10
+    CONTROL         "回零+",IDC_HOME_P,"Button",BS_AUTORADIOBUTTON,18,142,39,10
+    CONTROL         "回零-",IDC_HOME_N,"Button",BS_AUTORADIOBUTTON,18,153,39,10
+    GROUPBOX        "",IDC_STATIC,130,89,28,69
+    CONTROL         "X",IDC_X,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,136,98,16,10
+    CONTROL         "Y",IDC_Y,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,136,110,16,10
+    CONTROL         "Z",IDC_Z,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,136,122,16,10
+    CONTROL         "U",IDC_U,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,136,134,16,10
+    PUSHBUTTON      "运行",IDC_CMD_RUN,169,94,43,14
+    PUSHBUTTON      "急停",IDC_CMD_ESTOP,169,110,43,14
+    PUSHBUTTON      "减速停止",IDC_CMD_STOP,169,126,43,14
+    PUSHBUTTON      "位置清零",IDC_CLEAR_POS,169,142,43,14
+    CONTROL         "增量运行",IDC_INC_RUN,"Button",BS_AUTORADIOBUTTON,18,109,39,10
+    GROUPBOX        "速度模式",IDC_STATIC,70,89,57,76
+    CONTROL         "低速运行",IDC_SPEED_LOW,"Button",BS_AUTORADIOBUTTON,79,101,44,10
+    CONTROL         "高速运行",IDC_SPEED_HIGH,"Button",BS_AUTORADIOBUTTON,79,117,44,10
+    CONTROL         "加减速运行",IDC_SPEED_INCREASE,"Button",BS_AUTORADIOBUTTON,79,133,46,10
+    PUSHBUTTON      "Button1",IDC_DER_CHANGE_X,257,21,21,12
+    PUSHBUTTON      "Button1",IDC_DER_CHANGE_Y,257,35,21,12
+    PUSHBUTTON      "Button1",IDC_DER_CHANGE_Z,257,50,21,12
+    PUSHBUTTON      "Button1",IDC_DER_CHANGE_U,257,66,21,12
+END
+
+IDD_IO DIALOGEX 0, 0, 292, 201
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+FONT 14, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    GROUPBOX        "通用数组输入",IDC_STATIC,8,3,243,67
+    CONTROL         "DI0",IDC_IN0,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,18,26,16
+    CONTROL         "DI1",IDC_IN1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,46,18,26,16
+    CONTROL         "DI2",IDC_IN2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,75,18,26,16
+    CONTROL         "DI3",IDC_IN3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,104,18,26,16
+    CONTROL         "DI4",IDC_IN4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,18,26,16
+    CONTROL         "DI5",IDC_IN5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,162,18,26,16
+    CONTROL         "DI6",IDC_IN6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,191,18,26,16
+    CONTROL         "DI7",IDC_IN7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,220,18,26,16
+    CONTROL         "DI8",IDC_IN8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,41,26,16
+    CONTROL         "DI9",IDC_IN9,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,46,41,26,16
+    CONTROL         "DI10",IDC_IN10,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,75,41,26,16
+    CONTROL         "DI11",IDC_IN11,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,104,41,26,16
+    CONTROL         "DI12",IDC_IN12,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,41,26,16
+    CONTROL         "DI13",IDC_IN13,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,162,41,26,16
+    CONTROL         "DI14",IDC_IN14,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,191,41,26,16
+    CONTROL         "DI15",IDC_IN15,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,220,41,26,16
+    GROUPBOX        "通用数组输出",IDC_STATIC,8,77,243,67
+    CONTROL         "DO0",IDC_OUT0,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,92,26,16
+    CONTROL         "DO1",IDC_OUT1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,46,92,26,16
+    CONTROL         "DO2",IDC_OUT2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,75,92,26,16
+    CONTROL         "DO3",IDC_OUT3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,104,92,26,16
+    CONTROL         "DO4",IDC_OUT4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,92,26,16
+    CONTROL         "DO5",IDC_OUT5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,162,92,26,16
+    CONTROL         "DO6",IDC_OUT6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,191,92,26,16
+    CONTROL         "DO7",IDC_OUT7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,220,92,26,16
+    CONTROL         "DO8",IDC_OUT8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,115,26,16
+    CONTROL         "DO9",IDC_OUT9,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,46,115,26,16
+    CONTROL         "DO10",IDC_OUT10,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,75,115,26,16
+    CONTROL         "DO11",IDC_OUT11,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,104,115,26,16
+    CONTROL         "DO12",IDC_OUT12,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,115,26,16
+    CONTROL         "DO13",IDC_OUT13,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,162,115,26,16
+    CONTROL         "DO14",IDC_OUT14,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,191,115,26,16
+    CONTROL         "DO15",IDC_OUT15,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,220,115,26,16
+END
+
+IDD_CONFIG DIALOGEX 0, 0, 292, 201
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+FONT 14, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    GROUPBOX        "输出模式",IDC_STATIC,1,0,92,42,WS_GROUP
+    CONTROL         "脉冲/方向",IDC_MODEL_PULSE,"Button",BS_AUTORADIOBUTTON,18,12,45,10
+    CONTROL         "正/负脉冲(CW\\CCW)",IDC_MODEL_CWCCW,"Button",BS_AUTORADIOBUTTON,18,25,70,10
+    GROUPBOX        "输入模式",IDC_STATIC,1,41,92,42,WS_GROUP
+    CONTROL         "脉冲/方向",IDC_BACK_PULSE,"Button",BS_AUTORADIOBUTTON,18,52,45,10
+    CONTROL         "4xAB",IDC_BACK_AB,"Button",BS_AUTORADIOBUTTON,18,65,32,10
+    GROUPBOX        "原点查找模式",IDC_STATIC,1,82,92,42,WS_GROUP
+    CONTROL         "原点开关",IDC_ORG,"Button",BS_AUTORADIOBUTTON,18,93,44,10
+    CONTROL         "原点+EZ",IDC_ORG_EZ,"Button",BS_AUTORADIOBUTTON,18,106,43,10
+    GROUPBOX        " EZ有效信号",IDC_STATIC,1,123,92,42,WS_GROUP
+    CONTROL         "低电平",IDC_EZ_LOW,"Button",BS_AUTORADIOBUTTON,18,136,37,10
+    CONTROL         "高电平",IDC_EZ_HIGH,"Button",BS_AUTORADIOBUTTON,18,149,37,10
+    GROUPBOX        "速度参数",IDC_STATIC,96,0,112,83,WS_GROUP
+    RTEXT           "起始速度",IDC_STATIC,103,10,29,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_VEL_START,136,10,63,12,ES_AUTOHSCROLL
+    RTEXT           "最大速度",IDC_STATIC,103,24,29,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_VEL_MAX,136,24,63,12,ES_AUTOHSCROLL
+    RTEXT           "加速度",IDC_STATIC,110,38,22,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_ACC,136,38,63,12,ES_AUTOHSCROLL
+    RTEXT           "减速度",IDC_STATIC,110,52,22,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_DEC,136,52,63,12,ES_AUTOHSCROLL
+    RTEXT           "加加速度",IDC_STATIC,103,66,29,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_JERK,136,66,63,12,ES_AUTOHSCROLL
+    GROUPBOX        "曲线模式",IDC_STATIC,96,82,92,42,WS_GROUP
+    CONTROL         "T型曲线",IDC_T_TYPE,"Button",BS_AUTORADIOBUTTON,108,93,41,10
+    CONTROL         "S型曲线",IDC_S_TYPE,"Button",BS_AUTORADIOBUTTON,108,106,41,10
+    GROUPBOX        "限位有效电平",IDC_STATIC,96,123,92,42,WS_GROUP
+    CONTROL         "低电平",IDC_LIMIT_LOW,"Button",BS_AUTORADIOBUTTON,110,136,37,10
+    CONTROL         "高电平",IDC_LIMIT_HIGH,"Button",BS_AUTORADIOBUTTON,110,149,37,10
+    GROUPBOX        "当前轴",IDC_STATIC,216,0,36,83,WS_GROUP
+    CONTROL         "X",IDC_SET_X,"Button",BS_AUTORADIOBUTTON,224,15,21,10
+    CONTROL         "Y",IDC_SET_Y,"Button",BS_AUTORADIOBUTTON,224,31,20,10
+    CONTROL         "Z",IDC_SET_Z,"Button",BS_AUTORADIOBUTTON,224,47,20,10
+    CONTROL         "U",IDC_SET_U,"Button",BS_AUTORADIOBUTTON,224,63,21,10
+    PUSHBUTTON      "应用",IDC_APPLY,216,87,36,36,WS_GROUP
+END
+
+IDD_VER DIALOGEX 0, 0, 292, 201
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+FONT 14, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,3,160,78
+    RTEXT           "应用程序版本：",IDC_STATIC,25,16,49,11,SS_CENTERIMAGE
+    RTEXT           "API版本：",IDC_STATIC,25,30,49,11,SS_CENTERIMAGE
+    RTEXT           "驱动版本：",IDC_STATIC,25,44,49,11,SS_CENTERIMAGE
+    RTEXT           "逻辑版本：",IDC_STATIC,25,58,49,11,SS_CENTERIMAGE
+    RTEXT           "",IDC_APP_VER,80,16,49,11,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    RTEXT           "",IDC_API_VER,80,29,49,11,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    RTEXT           "",IDC_DRV_VER,80,42,49,11,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    RTEXT           "",IDC_LOGIC_VER,80,58,49,11,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "TODO: <公司名>"
+            VALUE "FileDescription", "TODO: <文件说明>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "MotionPanel64.exe"
+            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
+            VALUE "OriginalFilename", "MotionPanel64.exe"
+            VALUE "ProductName", "TODO: <产品名>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_MOTIONPANEL64_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 282
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 191
+    END
+
+    IDD_AIXS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 285
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 191
+    END
+
+    IDD_IO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 285
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+    END
+
+    IDD_CONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 290
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+    END
+
+    IDD_VER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 285
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 MotionPanel64(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\MotionPanel64.rc2"  // 非 Microsoft Visual C++ 编辑的资源
+#include "l.CHS\afxres.rc"      // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

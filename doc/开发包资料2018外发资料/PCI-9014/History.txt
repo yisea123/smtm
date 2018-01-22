@@ -1,0 +1,81 @@
+2015/11/10
+之前版本API最多支持4张PCI-9014; 升级API，在同一系统下最多支持16张PCI-9014.
+版本号升级为0x0115
+
+2014/04/23
+1)增加了C#调用模块和范例程序；
+
+2013/12/23
+1)对驱动程序重新进行数字签名，新数字签名支持时间戳服务（驱动程序不会因数字证书过期导致无法安装)；
+2)增加飞行变速功能对硬件版本号限制的描述；
+3)修改64位的调试程序MotionPanel64;源代码在examples\VC++\MotionPanel64目录。
+
+2013/8/29
+1)增加X轴位置比较成功时锁存Y轴编码器位置并存入硬件FIFO的功能（需要逻辑版本为0x113, 修改号为0x11 FPGA版本支持)
+  文档需要参考examples\VC++\PosComp目录下的pos_latch.h
+  例子需要参考examples\VC++\PosComp
+2) 函数库代码无更新。
+
+2013/7/31
+1) 增加连续运动时的飞行变速的支持(需要逻辑版本为0x0113或更高版本)；
+2）增加p9014_get_revision函数，用来查询逻辑的修改号(Revision);
+   相关函数：
+   p9014_get_revision
+
+3）增加对位置比较的支持(需要逻辑版本为0x0113 Revision为0x10， 或更高版本).
+   相关函数：
+   p9014_comp_enable
+   p9014_comp_get_fifoStatus
+   p9014_comp_add_ref
+   p9014_comp_get_curRef
+   p9014_comp_clr_fifo
+   p9014_comp_get_matchCount
+   p9014_comp_clr_matchCount
+
+
+2013-7-16
+1) 支持在速度模式下减速停止时可以只用独立的减速度，通过
+  int p9014_set_t_profile(I32 axis, double start_vel, double max_vel, double acc, double dec);
+  int p9014_set_s_profile(I32 axis, double start_vel, double max_vel, double acc, double dec, double jerk_percent);
+  里面的dec来设置；
+  注意该功能仅在T型速度曲线才支持。
+2) 在T型速度曲线的速度模式下，支持飞行变速(p9014_vmove)
+
+2013-6-18
+1) 编译生成64位的函数库(支持p9014_set_s_profile)
+2) 更新说明书
+
+2012-11-26
+1)update driver to support Windows XP-x64/Vista-x64/Win7-x64;
+2)MotionPanel is 32-bit, user should run example\vb.net\motiondemo to test motors in 64-bit OS.
+
+2011-12-23
+将速度倍率固定为100;
+最大加速度可以达到30000000 PPS/S.
+
+2011-12-22
+以前版本中查找可以达到的最大速度时使用的是二分查找算法，这种算法计算出来
+的最大速度会比理论上能够达到的最大速度小；
+
+该版本中直接通过解方程来实现：
+   max_vel = sqrt(dist*acc + start_vel*start_vel)
+可以直接计算出来理论上能达到的最大速度，实际运行速度为理论上能达到的最大速度（在
+不超过用户指定的最大速度情况下，可能会有几十PPS的误差）；可有效提高控制轴运行速度。
+
+
+2011-8-23
+升级MotionPanel程序，可以配置控制轴参数并记录到配置文件中，下次运行时
+自动从配置文件中配置控制轴参数。
+
+MotionPanel程序版本号升级为1.01
+
+2011-6-11
+板卡FPGA改为使用LATTICE公司的XP2系列，将驱动程序进行升级，升级后的驱动程序
+同时支持以前的产品(使用ACTEL的PROASIC3系列FPGA)；
+新板去除了设置限位开关类型的拨码开关，默认为常开类型（低电平有效）；如果用户
+需要使用常闭类型，需要使用更新的DLL库(版本要高于V1.1(Version Number: 0x0110))。
+
+PCB、逻辑与驱动程序有更新，其版本信息如下：
+PCB Version:   C(Ver.C)
+Logic Version: V1.14(Version Number: 0x010e)
+Driver Version: V1.11(Version Number: 0x010b)

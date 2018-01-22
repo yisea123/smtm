@@ -1,0 +1,111 @@
+;-------------------------------------------------------------------------
+;
+;Copyright (c) Shenzhen Solid Technology Co., Ltd. All rights reserved.
+;
+;
+;Module Name:
+;
+;    PCI9014.INF
+;
+;Abstract:
+;    INF file for PCI-9014 Motion Controller.
+;    Only Windows XP/Vista/Win7/Win8 supported.
+;
+;-------------------------------------------------------------------------
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=MotionController
+ClassGuid={3812F149-5CFC-439C-918B-DF43F60E0FA1}
+Provider=%MFGNAME%
+DriverVer=03/19/2015,6.1.7600.16385
+CatalogFile=PCI9014.cat
+
+[DestinationDirs]
+DefaultDestDir=12
+
+;-------------------------------------------------------------------------
+; Class Section
+;-------------------------------------------------------------------------
+[ClassInstall32]
+AddReg=MC_ClassReg
+
+[MC_ClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-5
+
+;-------------------------------------------------------------------------
+; Device Install Section
+;-------------------------------------------------------------------------
+[ControlFlags]
+ExcludeFromSelect=*
+
+[Manufacturer]
+%MFGNAME%=MFGR,NTAMD64
+
+[SourceDisksFiles]
+pci9014.sys=1
+
+[SourceDisksNames]
+1=%INSTDISK%,
+
+; For XP and later
+[MFGR.NTAMD64]
+; DisplayName                                   Section     DeviceId
+; -----------                                   -------     --------
+"PCI-9014"=                                     PCI_Inst,    PCI\VEN_11AA&DEV_9014&SUBSYS_00000000&REV_00
+"PCI-9014"=                                     PCI_Inst,    PCI\VEN_1204&DEV_9014&SUBSYS_00000000&REV_01
+
+[PCI_Inst.NT]
+CopyFiles=PCI.CopyFiles
+
+[PCI.CopyFiles]
+pci9014.sys
+
+[PCI_Inst.NT.HW]
+HKR,,Security,,"D:P(A;;GA;;;SY)(A;;GRGWGX;;;BA)(A;;GRGWGX;;;BU)(A;;GA;;;BG)"
+
+[PCI_Inst.NT.Services]
+AddService=PCI9014,0x00000002,PCI_Service
+
+[PCI_Service]
+DisplayName     = %DISPLAYNAME%
+ServiceType     = 1                  ; SERVICE_KERNEL_DRIVER
+StartType       = 3                  ; SERVICE_DEMAND_START
+ErrorControl    = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary   = %12%\pci9014.sys
+
+;-------------------------------------------------------------------------
+; WDF Coinstaller installation
+;-------------------------------------------------------------------------
+[DestinationDirs]
+CoInstaller_CopyFiles = 11
+
+[PCI_Inst.NT.CoInstallers]
+AddReg=CoInstaller_AddReg
+CopyFiles=CoInstaller_CopyFiles
+
+[CoInstaller_CopyFiles]
+WdfCoInstaller01009.dll
+
+[SourceDisksFiles]
+WdfCoInstaller01009.dll=1
+
+[CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller01009.dll,WdfCoInstaller"
+
+[PCI_Inst.NT.Wdf]
+KmdfService = PCI9014, PCI_wdfsect
+
+[PCI_wdfsect]
+KmdfLibraryVersion = 1.9
+
+;------------------------------------------------------------------------------
+;  String Definitions
+;------------------------------------------------------------------------------
+
+[Strings]
+MFGNAME="Shenzhen Solid Technology Co., Ltd."
+ClassName="Solidtech Motion Controller"
+DISPLAYNAME="PCI-9014"
+INSTDISK="PCI-9014 Driver Installation Disk"

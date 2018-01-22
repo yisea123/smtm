@@ -1,0 +1,255 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\GuiDemo1.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\GuiDemo1.ico"
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About GuiDemo1"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "GuiDemo1 Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2009",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_GUIDEMO1_DIALOG DIALOGEX 0, 0, 323, 271
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "GuiDemo1"
+FONT 10, "Arial"
+BEGIN
+    GROUPBOX        "Parameter",IDC_STATIC,22,18,140,113
+    GROUPBOX        "Motion Status",IDC_STATIC,172,19,134,156
+    GROUPBOX        "Command",IDC_STATIC,24,180,281,78
+    COMBOBOX        IDC_COMBO_AXIS,73,32,65,56,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Axis No.",IDC_STATIC,30,34,30,8
+    LTEXT           "acc.",IDC_STATIC,45,94,15,8
+    LTEXT           "dec.",IDC_STATIC,45,114,15,8
+    LTEXT           "start vel.",IDC_STATIC,31,52,29,8
+    LTEXT           "max. vel.",IDC_STATIC,29,72,31,8
+    EDITTEXT        IDC_EDIT1,73,51,65,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,74,71,65,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,74,91,65,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,73,111,65,14,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC_COMMAND,34,191,111,59,WS_GROUP
+    CONTROL         "positioning drive",IDC_RADIO1,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,44,204,81,10
+    CONTROL         "velecity mode(+)",IDC_RADIO2,"Button",
+                    BS_AUTORADIOBUTTON,44,216,78,10
+    CONTROL         "velecity mode(-)",IDC_RADIO3,"Button",
+                    BS_AUTORADIOBUTTON,44,229,81,10
+    DEFPUSHBUTTON   "Run",IDC_BUTTON_RUN,179,195,67,15
+    PUSHBUTTON      "SD Stop",IDC_BUTTON_SD_STOP,180,215,67,15
+    PUSHBUTTON      "Emg. Stop",IDC_BUTTON_EMG_STOP,180,236,67,15
+    LTEXT           "Current vel.",IDC_STATIC,186,37,38,8
+    EDITTEXT        IDC_EDIT5,233,34,65,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Motion Status",IDC_STATIC,177,56,47,8
+    EDITTEXT        IDC_EDIT6,233,52,65,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Cmd. Pos.",IDC_STATIC,188,76,36,8
+    EDITTEXT        IDC_EDIT7,233,71,65,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Encoder Pos.",IDC_STATIC,178,93,46,8
+    EDITTEXT        IDC_EDIT8,233,90,65,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "PEL",IDC_STATIC,209,115,15,8
+    EDITTEXT        IDC_EDIT9,233,111,65,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "MEL",IDC_STATIC,208,134,16,8
+    EDITTEXT        IDC_EDIT10,233,130,65,14,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "Driving Distance",IDC_STATIC,23,135,140,30
+    EDITTEXT        IDC_EDIT11,73,145,65,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT12,233,149,65,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "EMG",IDC_STATIC,206,151,18,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "GuiDemo1 MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "GuiDemo1\0"
+            VALUE "LegalCopyright", "Copyright (C) 2009\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "GuiDemo1.EXE\0"
+            VALUE "ProductName", "GuiDemo1 Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_GUIDEMO1_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 316
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 264
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About GuiDemo1..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\GuiDemo1.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

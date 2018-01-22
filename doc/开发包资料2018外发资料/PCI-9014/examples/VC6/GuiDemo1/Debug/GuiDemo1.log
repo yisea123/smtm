@@ -1,0 +1,45 @@
+﻿生成启动时间为 2018/1/17 13:55:18。
+     1>项目“E:\mywork\smtm\doc\开发包资料2018外发资料\PCI-9014\examples\VC6\GuiDemo1\GuiDemo1.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“.\Debug\GuiDemo1.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         正在删除文件“.\Debug/GuiDemo1.pch”。
+         D:\software\vs2010\VC\bin\CL.exe /c /I..\..\..\library /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp".\Debug/GuiDemo1.pch" /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /FR".\Debug\\" /Gd /TP /analyze- /errorReport:prompt StdAfx.cpp
+         StdAfx.cpp
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+         D:\software\vs2010\VC\bin\CL.exe /c /I..\..\..\library /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp".\Debug/GuiDemo1.pch" /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /FR".\Debug\\" /Gd /TP /analyze- /errorReport:prompt GuiDemo1.cpp GuiDemo1Dlg.cpp
+         GuiDemo1Dlg.cpp
+         GuiDemo1.cpp
+     1>e:\mywork\smtm\doc\开发包资料2018外发资料\pci-9014\examples\vc6\guidemo1\guidemo1.cpp(54): warning C4996: 'CWinApp::Enable3dControlsStatic': CWinApp::Enable3dControlsStatic is no longer needed. You should remove this call.
+                 d:\software\vs2010\vc\atlmfc\include\afxwin.h(5383) : 参见“CWinApp::Enable3dControlsStatic”的声明
+         正在生成代码...
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _DEBUG /D _VC80_UPGRADE=0x0600 /l"0x0804" /nologo /fo".\Debug\GuiDemo1.res" GuiDemo1.rc 
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo".\Debug\GuiDemo1.exe.embed.manifest.res" .\Debug\GuiDemo1_manifest.rc 
+       Link:
+         D:\software\vs2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug/GuiDemo1.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\..\..\library /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" pci9014.lib /MANIFEST /ManifestFile:".\Debug\GuiDemo1.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:".\Debug/GuiDemo1.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Debug\GuiDemo1.lib" /MACHINE:X86 .\Debug\GuiDemo1.res
+         .\Debug\GuiDemo1.exe.embed.manifest.res
+         .\Debug/GuiDemo1.obj
+         .\Debug/GuiDemo1Dlg.obj
+         .\Debug/StdAfx.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:".\Debug\GuiDemo1.exe.embed.manifest" /manifest .\Debug\GuiDemo1.exe.intermediate.manifest D:\software\vs2010\VC\Include\Manifest\dpiaware.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo".\Debug\GuiDemo1.exe.embed.manifest.res" .\Debug\GuiDemo1_manifest.rc 
+       LinkEmbedManifest:
+         D:\software\vs2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug/GuiDemo1.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\..\..\library /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" pci9014.lib /MANIFEST /ManifestFile:".\Debug\GuiDemo1.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:".\Debug/GuiDemo1.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Debug\GuiDemo1.lib" /MACHINE:X86 .\Debug\GuiDemo1.res
+         .\Debug\GuiDemo1.exe.embed.manifest.res
+         .\Debug/GuiDemo1.obj
+         .\Debug/GuiDemo1Dlg.obj
+         .\Debug/StdAfx.obj
+         GuiDemo1.vcxproj -> E:\mywork\smtm\doc\开发包资料2018外发资料\PCI-9014\examples\VC6\GuiDemo1\.\Debug\GuiDemo1.exe
+       BscMake:
+         D:\software\vs2010\VC\bin\bscmake.exe /nologo /o".\Debug/GuiDemo1.bsc" .\Debug\GuiDemo1.sbr .\Debug\GuiDemo1Dlg.sbr .\Debug\StdAfx.sbr
+       FinalizeBuildStatus:
+         正在删除文件“.\Debug\GuiDemo1.unsuccessfulbuild”。
+         正在对“.\Debug\GuiDemo1.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“E:\mywork\smtm\doc\开发包资料2018外发资料\PCI-9014\examples\VC6\GuiDemo1\GuiDemo1.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:09.72
